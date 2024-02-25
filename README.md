@@ -19,7 +19,8 @@ This is a very simple To-Do List in Django framework. It was developed using Dja
    ```
    pip install -r requirements.txt
    ```
-3. I suggest you to run it in a vitual environment before everything
+3. I suggest you to run it in a vitual environment before everything and create a .env file with your SECRET_KEY,
+   DEBUG and ALLOWED_HOST
    ```
    python -m venv .venv
    ```
