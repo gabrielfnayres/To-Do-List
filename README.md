@@ -16,9 +16,19 @@ This is a very simple To-Do List in Django framework. It was developed using Dja
 
 1. Clone this repository:
 2. Install the things in requirements.txt
-3. I suggest you to run it in a vitual environment
+   ```
+   pip install -r requirements.txt
+   ```
+3. I suggest you to run it in a vitual environment before everything
+   ```
+   python -m venv .venv
+   ```
+4. Connect to de database and migrate everything to it:
+  ```
+  python manage.py migrate
+  ```
 
-To run the application just type this in terminal:
+5. To run the application just type this in terminal:
 
 ```
 python manage.py runserver
