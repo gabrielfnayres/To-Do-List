@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block page_title %}
+    Task List
+{% endblock page_title %}
+{% block content %}
+    <h1>To Do List</h1>
+    {% if todo_list %}
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Title</th>
+                <th scope="col">Created at</th>
+                <th scope="col">Deadline</th>
+                <th scope="col">Finished at</th>
+                <th scope="col">Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+                {% for todo in todo_list %}
+                    <tr>
+                        <th scope="row">{{todo.pk}}</th>
+                        <td>{{todo.title}}</td>
+                        <td>{{todo.created_at}}</td>
+                        <td>{{todo.deadline| default:"-"}}</td>
+                        <td>{{todo.finished_at| default:"-"}}</td>
+                        <td>
+                            <a href="{% url "todo_finish" pk=todo.pk%}" class="btn btn-primary btn-sm">Conclude</a>
+                            <a href="{% url "todo_update" pk=todo.pk %}" class="btn btn-secondary btn-sm">Edit</a>
+                            <a href="{% url "todo_delete" pk=todo.pk %}" class="btn btn-danger btn-sm">Delete</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No tasks found</p>
+    {% endif %}
+    <a = href="{% url 'todo_create'%}" class="btn btn-primary">Create task</a>
+
+{% endblock content %}
+
+        
+
+    
