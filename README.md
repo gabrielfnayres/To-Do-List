@@ -10,7 +10,7 @@ This is a very simple To-Do List in Django framework. It was developed using Dja
 - Show all the tasks.
 - Confirm already done tasks.
 - Edit tasks.
-- Delete tsks.
+- Delete tasks.
 
 ## Setup
 
